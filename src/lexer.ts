@@ -107,7 +107,13 @@ export class Lexer {
     }
 
     if (this._current !== '}') {
-      throw new LexerError(this._filename, 'Expression must have an ending of "}"', this._line, startPos, this._position);
+      throw new LexerError(
+        this._filename,
+        'Expression must have an ending of "}"',
+        this._line,
+        startPos,
+        this._position,
+      );
     }
 
     if (expr === '') {
@@ -119,7 +125,7 @@ export class Lexer {
       value: expr,
       line: this._line,
       startPos: startPos,
-      endPos: this._position
+      endPos: this._position,
     };
   }
 
